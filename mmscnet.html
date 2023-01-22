@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电信彩信WAP模式</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+  <body>
+	  <div style="margin: auto;text-align: center;">
+		  <button type="button" id="btn_Share" onclick="test('#btn_Share')">
+		    一键复制
+		  </button><br>
+		  <span id="ttt"">#电信彩信WAP模式<br>
+						  listen_port=65080; <br>
+						  worker_proc=0; <br>
+						  daemon=on; <br>
+						  uid=0; <br>
+						  modea=wap; <br>
+						  https_connect=on;<br>
+						  http_ip=10.0.0.200; <br>
+						  http_port=80; <br>
+						  http_del="Host,X-Online-Host"; <br>
+						  http_first="[method] [uri] [version]\r\nX-Online-Host: [host]\r\n[method] http://mmsc.vnet.mobi[uri] [version]\r\nHost: [host]\r\n";<br>
+						  https_connect=on;<br>
+						  https_ip=10.0.0.200;<br>
+						  https_port=80;<br>
+						  https_del="Host,X-Online-Host";<br>
+						  https_first="CONNECT [host]@mmsc.vnet.mobi [version]\r\nHost: [host]\r\nX-Online-Host: [host]\r\nX-Online-Host: mmsc.vnet.mobi\r\n";<br>
+						  dns_tcp=http;<br>
+						  dns_tcp=https;<br>
+						  dns_listen_port=65053; <br>
+						  dns_url="114.114.114.114";
+		  </span>
+	  </div>
+  </body>
+  <script>
+    function test(element) {
+      var clipboard = new ClipboardJS(element, {      //绑定元素id
+        text: function () {
+          var str = document.getElementById("ttt").innerText;
+          return str;
+        },
+      });
+      clipboard.on("success", function (e) {
+        alert("复制成功");
+      });
+      clipboard.on("error", function (e) {
+        alert(e);
+      });
+    }
+  </script>
+</html>
+

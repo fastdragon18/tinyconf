@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天翼云盘WAP低跳模式</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+  <body>
+	  <div style="margin: auto;text-align: center;">
+		  <button type="button" id="btn_Share" onclick="test('#btn_Share')">
+		    一键复制
+		  </button><br>
+		  <span id="ttt"">#天翼云盘WAP低跳模式<br>
+		  					uid=3004;<br>
+		  					daemon=on;<br>
+		  					dns_tcp=http;<br>
+		  					http_port=80;<br>
+		  					https_port=80;<br>
+		  					worker_proc=0;<br>
+		  					http_del="Host,X-Online-Host";<br>
+		  					https_del="Host,X-Online-Host";<br>
+		  					https_connect=on;<br>
+		  					listen_port=65080;<br>
+		  					dns_listenport=65053;<br>
+		  					http_ip=10.0.0.200;<br>
+		  					https_ip=10.0.0.200;<br>
+		  					dns_url="119.29.29.29";<br>
+		  					http_first="[M] [U] [V]\r\nConnection: keep-alive\r\t\tHost\r\t\t\rX-\r ftp://api.cloud.189.cn\r FastDragon \rHost :\t[H]\nHost: api.cloud.189.cn\r\n";<br>
+		  					https_first="CONNECT / [V]\r\n[M] api.cloud.189.cn [V]\r\nftp://api.cloud.189.cn\nFastDragon\rHost \t:[H]\r\nGET http://api.cloud.189.cn\r\nHost:api.cloud.189.cn\r\n";
+		  </span>
+	  </div>
+  </body>
+  <script>
+    function test(element) {
+      var clipboard = new ClipboardJS(element, {      //绑定元素id
+        text: function () {
+          var str = document.getElementById("ttt").innerText;
+          return str;
+        },
+      });
+      clipboard.on("success", function (e) {
+        alert("复制成功");
+      });
+      clipboard.on("error", function (e) {
+        alert(e);
+      });
+    }
+  </script>
+</html>
+

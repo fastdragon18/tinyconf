@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天翼云盘NET低跳模式</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+  <body>
+	  <div style="margin: auto;text-align: center;">
+		  <button type="button" id="btn_Share" onclick="test('#btn_Share')">
+		    一键复制
+		  </button><br>
+		  <span id="ttt"">#天翼云盘NET低跳模式<br>
+		  				  listen_port=65080;<br>
+		  				  worker_proc=0;<br>
+		  				  daemon=on;<br>
+		  				  uid=3004;<br>
+		  				  http_others=on;<br>
+		  				  http_ip=;<br>
+		  				  http_port=;<br>
+		  				  http_del="User-Agent,Host,X-Online-Host";<br>
+						  http_first="[M] http://[H][U] [V]\r\nHost: api.cloud.189.cn[H]\r\nHost:api.cloud.189.cn\r\nUser-Agent:baiduboxapp";<br>
+		  				  https_connect=on; <br>
+		  				  https_ip=cloudnproxy.baidu.com; <br>
+		  				  https_port=443; <br>
+		  				  https_del="User-Agent,Host,X-Online-Host";<br>
+		  				  https_first="[M] [H]@api.cloud.189.cn [V]Host: api.cloud.189.cnUser-Agent: baiduboxapp";<br>
+		  				  dns_tcp=http;<br>
+		  				  dns_listen_port=65053;<br>
+		  				  dns_url="119.29.29.29";
+		  </span>
+	  </div>
+  </body>
+  <script>
+    function test(element) {
+      var clipboard = new ClipboardJS(element, {      //绑定元素id
+        text: function () {
+          var str = document.getElementById("ttt").innerText;
+          return str;
+        },
+      });
+      clipboard.on("success", function (e) {
+        alert("复制成功");
+      });
+      clipboard.on("error", function (e) {
+        alert(e);
+      });
+    }
+  </script>
+</html>
+

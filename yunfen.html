@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天翼云盘WAP低跳模式</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+  <body>
+	  <div style="margin: auto;text-align: center;">
+		  <button type="button" style="text-align: center;" id="btn_Share" onclick="test('#btn_Share')">
+		    一键复制
+		  </button><br>
+		  <span id="ttt"">#天翼云盘WAP低跳模式<br>
+						  #Tiny分流模板_云盘直连<br>
+						  #使用最新版TinyProxy<br>
+						  #需要高速V2节点可联系群主搭建<br>
+						  listen_port=65080;<br>
+						  worker_proc=0;<br>
+						  daemon=on;<br>
+						  uid=3004;<br>
+						  mode=wap;<br>
+						  #百度直连_联通免流IP<br>
+						  #江苏 157.0.148.53<br>
+						  #河北 110.242.70.69<br>
+						  #百度直连_电信免流IP<br>
+						  #南京 180.97.104.168<br>
+						  #北京 220.181.7.1<br>
+						  #删除http代理ip http将由v2接管<br>
+						  http_others=on;<br>
+						  http_ip=;<br>
+						  http_port=443;<br>
+						  http_del="X-Online-Host,Host";<br>
+						  http_first="[M] http://[H][U] [V]\r\nHost: [H]\r\nX-T5-Auth: YTI0NmM1\r\n";<br>
+						  https_connect=on;<br>
+						  https_ip=220.181.111.189;<br>
+						  https_port=443;<br>
+						  https_del="X-Online-Host,Host";<br>
+						  https_first="[M] [H]@api.cloud.189.cn [V]Host: api.cloud.189.cnUser-Agent: baiduboxapp";<br>
+						  dns_tcp=https;<br>
+						  dns_listen_port=65053;<br>
+						  dns_url="119.29.29.29";<br>
+						  #分流字段：国内走百度直连，国外走V2<br>
+						  #非80/8080端口节点加前置代理也能实现免流<br>
+						  #UDP流量由V2转发<br>
+						  bypass_flow=true;<br>
+						  #下面是v2ray服务器<br>
+						  #v2ray 参数按照服务器设置填写<br>
+						  #v2ray代理模式 v2ray客户端直连<br>
+						  #v2ray 参数按照服务器设置填写<br>
+						  #v2ray服务器 IP<br>
+						  v2_address=;<br>
+						  #v2ray服务器 端口<br>
+						  v2_port=80;<br>
+						  #v2ray 用户id<br>
+						  v2_id=;<br>
+						  #v2ray dns设置 <br>
+						  v2_dnsip=8.8.8.8;<br>
+						  #v2ray 额外ID<br>
+						  v2_alterId=0;<br>
+						  #v2ray VLESS代理加密方式 none<br>
+						  v2_encryption={encryption};<br>
+						  #v2ray 加密方式 none auto aes-128-gcm chacha20-poly1305<br>
+						  v2_security=auto;<br>
+						  #v2ray 流控处理方式 xtls-rprx-origin xtls-rprx-direct xtls-rprx-origin-udp443 xtls-rprx-direct-udp443<br>
+						  v2_flow={flow};<br>
+						  #v2ray 传输协议 quic h2 ws kcp tcp<br>
+						  v2_network=tcp;<br>
+						  #v2ray 配置别名 无效参数<br>
+						  #v2_remarks=v2ray;<br>
+						  #v2ray 伪装类型 none http srtp utp wechat-video dtls wireguard<br>
+						  v2_headerType=http;<br>
+						  #v2ray 伪装域名(host/ws host/h2 host)/QUIC 加密方式<br>
+						  v2_requestHost=api.cloud.189.cn;<br>
+						  #v2ray path(ws path/h2 path)/QUIC加密方式<br>
+						  v2_path=/;<br>
+						  #v2ray 底层传输安全 tls xtls<br>
+						  v2_streamSecurity=none;<br>
+						  #v2ray tls 允许不安全连接 true false<br>
+						  v2_allowlnsecure=true;<br>
+						  #v2ray 配置类型 1 vmess 3 shadowsocks 4 socks 5 vless 6 trojan<br>
+						  v2_configType=1;<br>
+						  #v2ray 配置版本<br>
+						  v2_configVersion=2;<br>
+						  #v2ray 参数不明 留空<br>
+						  v2_testResult=;<br>
+						  #v2ray 参数不明 留空<br>
+						  v2_subid=;
+		  </span><br>
+	  </div>
+  </body>
+  <script>
+    function test(element) {
+      var clipboard = new ClipboardJS(element, {      //绑定元素id
+        text: function () {
+          var str = document.getElementById("ttt").innerText;
+          return str;
+        },
+      });
+      clipboard.on("success", function (e) {
+        alert("复制成功");
+      });
+      clipboard.on("error", function (e) {
+        alert(e);
+      });
+    }
+  </script>
+</html>
+

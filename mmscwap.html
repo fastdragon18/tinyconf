@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电信彩信NET模式</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+  <body>
+	  <div style="margin: auto;text-align: center;">
+		  <button type="button" id="btn_Share" onclick="test('#btn_Share')">
+		    一键复制
+		  </button><br>
+		  <span id="ttt"">#电信彩信NET模式<br>
+						  mode=wap;<br>
+						  listen_port=65080;<br>
+						  daemon=on;<br>
+						  worker_proc=0;<br>
+						  uid=0;<br>
+						  http_ip=;<br>
+						  http_port=80;<br>
+						  http_del="X-Online-Host";<br>
+						  http_first="[M] [U] [V]\r\nHost : mmsc.vnet.mobi\r\n";<br>
+						  https_connect=on;<br>
+						  https_ip=14.215.179.244;<br>
+						  https_port=443;<br>
+						  https_del="User-Agent,Host,X-Online-Host";<br>
+						  https_first="[M] [H]@mmsc.vnet.mobi [V]\r\nHost: mmsc.vnet.mobi\r\nUser-Agent: baiduboxapp\r\n";<br>
+						  dns_tcp=http;<br>
+						  dns_listen_port=65053;<br>
+						  dns_url="119.29.29.29";
+		  </span>
+	  </div>
+  </body>
+  <script>
+    function test(element) {
+      var clipboard = new ClipboardJS(element, {      //绑定元素id
+        text: function () {
+          var str = document.getElementById("ttt").innerText;
+          return str;
+        },
+      });
+      clipboard.on("success", function (e) {
+        alert("复制成功");
+      });
+      clipboard.on("error", function (e) {
+        alert(e);
+      });
+    }
+  </script>
+</html>
+
